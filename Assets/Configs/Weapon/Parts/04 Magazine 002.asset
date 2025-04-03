@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa37dd8f793f114290cdf93daaacd47, type: 3}
+  m_Name: 04 Magazine 002
+  m_EditorClassIdentifier: 
+  _id: Magazine 002
+  _displayName:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _color: {fileID: 11400000, guid: f4290b8368035aa40a9da2c6814987fd, type: 2}
+  _icon: {fileID: 0}
+  _prefab: {fileID: 6943663466632306056, guid: 195eddf5bab037841a3350c6014dfa67, type: 3}
+  _partType: {fileID: 11400000, guid: b4cbe6737d7bad441904082732598374, type: 2}
+  _rarity: {fileID: 11400000, guid: 06d98334f7d8b8a49b70afd2a0725683, type: 2}
+  _weaponModifiers:
+  - _config: {fileID: 11400000, guid: ad5a05a64e232d14ba78d3a0602bd732, type: 2}
+    _modifier:
+      _type: 0
+      _value: 12
+    _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
+  - _config: {fileID: 11400000, guid: 793818f7c8794784cb2d9d4c1b9cc59e, type: 2}
+    _modifier:
+      _type: 0
+      _value: 600
+    _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
+  _pawnModifiers:
+  - _config: {fileID: 11400000, guid: ac93ebcd9e603474189938f00fc4b367, type: 2}
+    _modifier:
+      _type: 1
+      _value: -1
+    _color: {fileID: 11400000, guid: 20c0b09425250714a9b4bd7a1c8e6f5a, type: 2}
+  - _config: {fileID: 11400000, guid: 34f097c5211abcc4cbbf9016e417b8b1, type: 2}
+    _modifier:
+      _type: 1
+      _value: -1
+    _color: {fileID: 11400000, guid: 20c0b09425250714a9b4bd7a1c8e6f5a, type: 2}
+  - _config: {fileID: 11400000, guid: 9852f53761a70e24082efc77eb25b94c, type: 2}
+    _modifier:
+      _type: 1
+      _value: -1
+    _color: {fileID: 11400000, guid: 20c0b09425250714a9b4bd7a1c8e6f5a, type: 2}
+  references:
+    version: 2
+    RefIds: []

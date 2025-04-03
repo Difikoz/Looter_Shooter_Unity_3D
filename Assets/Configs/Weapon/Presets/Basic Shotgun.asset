@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1071454a2c774a44b9e422eb67177ff, type: 3}
+  m_Name: Basic Shotgun
+  m_EditorClassIdentifier: 
+  _id: Basic Shotgun
+  _displayName:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _color: {fileID: 11400000, guid: f4290b8368035aa40a9da2c6814987fd, type: 2}
+  _icon: {fileID: 0}
+  _parts:
+  - {fileID: 11400000, guid: 067a817c0273879419de5e51c2c40158, type: 2}
+  - {fileID: 11400000, guid: b91c13227516fa542b74b0976dcc2eaa, type: 2}
+  - {fileID: 11400000, guid: 8c13c993977a85543b31de29b58519f6, type: 2}
+  - {fileID: 11400000, guid: 99bb116f3d85ef64faef6aebf1c19c60, type: 2}
+  - {fileID: 11400000, guid: e061ae52e8db86e44be18d442adf25a1, type: 2}
+  - {fileID: 11400000, guid: 5166d222e1de4dd47879ecab4abf2123, type: 2}
+  references:
+    version: 2
+    RefIds: []

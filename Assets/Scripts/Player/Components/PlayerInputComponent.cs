@@ -17,6 +17,9 @@ namespace WinterUniverse
         private bool _fireCanceled;
         private bool _aimPerfomed;
         private bool _aimCanceled;
+        private bool _reloadPerfomed;
+        private bool _previousWeaponPerfomed;
+        private bool _nextWeaponPerfomed;
 
         public Vector2 MoveInput { get; private set; }
         public Vector2 LookInput { get; private set; }
@@ -35,12 +38,15 @@ namespace WinterUniverse
             _inputActions.Player.Jump.performed += ctx => _jumpPerfomed = true;
             _inputActions.Player.Jump.canceled += ctx => _jumpCanceled = true;
             _inputActions.Player.Interact.performed += ctx => _interactPerfomed = true;
-            _inputActions.Player.Attack.performed += ctx => _attackPerfomed = true;
-            _inputActions.Player.Attack.canceled += ctx => _attackCanceled = true;
-            _inputActions.Player.Fire.performed += ctx => _firePerfomed = true;
-            _inputActions.Player.Fire.canceled += ctx => _fireCanceled = true;
-            _inputActions.Player.Aim.performed += ctx => _aimPerfomed = true;
-            _inputActions.Player.Aim.canceled += ctx => _aimCanceled = true;
+            _inputActions.Weapon.Attack.performed += ctx => _attackPerfomed = true;
+            _inputActions.Weapon.Attack.canceled += ctx => _attackCanceled = true;
+            _inputActions.Weapon.Fire.performed += ctx => _firePerfomed = true;
+            _inputActions.Weapon.Fire.canceled += ctx => _fireCanceled = true;
+            _inputActions.Weapon.Aim.performed += ctx => _aimPerfomed = true;
+            _inputActions.Weapon.Aim.canceled += ctx => _aimCanceled = true;
+            _inputActions.Weapon.Reload.performed += ctx => _reloadPerfomed = true;
+            _inputActions.Weapon.PreviousWeapon.performed += ctx => _previousWeaponPerfomed = true;
+            _inputActions.Weapon.NextWeapon.performed += ctx => _nextWeaponPerfomed = true;
         }
 
         public override void DisableComponent()
@@ -49,12 +55,15 @@ namespace WinterUniverse
             _inputActions.Player.Jump.performed -= ctx => _jumpPerfomed = true;
             _inputActions.Player.Jump.canceled -= ctx => _jumpCanceled = true;
             _inputActions.Player.Interact.performed -= ctx => _interactPerfomed = true;
-            _inputActions.Player.Attack.performed -= ctx => _attackPerfomed = true;
-            _inputActions.Player.Attack.canceled -= ctx => _attackCanceled = true;
-            _inputActions.Player.Fire.performed -= ctx => _firePerfomed = true;
-            _inputActions.Player.Fire.canceled -= ctx => _fireCanceled = true;
-            _inputActions.Player.Aim.performed -= ctx => _aimPerfomed = true;
-            _inputActions.Player.Aim.canceled -= ctx => _aimCanceled = true;
+            _inputActions.Weapon.Attack.performed -= ctx => _attackPerfomed = true;
+            _inputActions.Weapon.Attack.canceled -= ctx => _attackCanceled = true;
+            _inputActions.Weapon.Fire.performed -= ctx => _firePerfomed = true;
+            _inputActions.Weapon.Fire.canceled -= ctx => _fireCanceled = true;
+            _inputActions.Weapon.Aim.performed -= ctx => _aimPerfomed = true;
+            _inputActions.Weapon.Aim.canceled -= ctx => _aimCanceled = true;
+            _inputActions.Weapon.Reload.performed -= ctx => _reloadPerfomed = true;
+            _inputActions.Weapon.PreviousWeapon.performed -= ctx => _previousWeaponPerfomed = true;
+            _inputActions.Weapon.NextWeapon.performed -= ctx => _nextWeaponPerfomed = true;
             _inputActions.Disable();
             base.DisableComponent();
         }
@@ -88,7 +97,6 @@ namespace WinterUniverse
             {
                 _attackPerfomed = false;
                 //...
-                _player.Look.AddRecoilForce(4f);// test
             }
             else if (_attackCanceled)
             {
@@ -98,18 +106,17 @@ namespace WinterUniverse
             if (_firePerfomed)
             {
                 _firePerfomed = false;
-                //...
-                _player.Look.AddRecoilForce(4f);// test
+                _player.Equipment.ActiveWeaponSlot.Weapon.PerformFire();
             }
             else if (_fireCanceled)
             {
                 _fireCanceled = false;
-                //...
+                _player.Equipment.ActiveWeaponSlot.Weapon.CancelFire();
             }
             if (_aimPerfomed)
             {
                 _aimPerfomed = false;
-                if(HoldToAim)
+                if (HoldToAim)
                 {
                     // start aim
                 }
@@ -121,10 +128,27 @@ namespace WinterUniverse
             else if (_aimCanceled)
             {
                 _aimCanceled = false;
-                if(HoldToAim)
+                if (HoldToAim)
                 {
                     // stop aim
                 }
+            }
+            if (_reloadPerfomed)
+            {
+                _reloadPerfomed = false;
+                _player.Equipment.ActiveWeaponSlot.Weapon.PerformReload();
+            }
+            if (_previousWeaponPerfomed)
+            {
+                _previousWeaponPerfomed = false;
+                _nextWeaponPerfomed = false;
+                _player.Equipment.PreviousWeapon();
+            }
+            else if (_nextWeaponPerfomed)
+            {
+                _previousWeaponPerfomed = false;
+                _nextWeaponPerfomed = false;
+                _player.Equipment.NextWeapon();
             }
         }
     }

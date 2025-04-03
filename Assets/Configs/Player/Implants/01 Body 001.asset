@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cf38866f34a5b43937f0362fd59312, type: 3}
+  m_Name: 01 Body 001
+  m_EditorClassIdentifier: 
+  _id: Body 001
+  _displayName:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _color: {fileID: 11400000, guid: f4290b8368035aa40a9da2c6814987fd, type: 2}
+  _icon: {fileID: 0}
+  _implantType: {fileID: 11400000, guid: a084601a9930d9f4ea933c356b2641b4, type: 2}
+  _rarity: {fileID: 11400000, guid: 06d98334f7d8b8a49b70afd2a0725683, type: 2}
+  _pawnModifiers:
+  - _config: {fileID: 11400000, guid: 1ecf1db7cb1f2f742b268c43e2915fef, type: 2}
+    _modifier:
+      _type: 0
+      _value: 50
+    _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
+  - _config: {fileID: 11400000, guid: 36a1a9aad7692a94d80b3c7cb02b5f61, type: 2}
+    _modifier:
+      _type: 0
+      _value: 50
+    _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
+  - _config: {fileID: 11400000, guid: 809d8f9f35e88f645a47fac49f5148e7, type: 2}
+    _modifier:
+      _type: 0
+      _value: 1
+    _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
+  - _config: {fileID: 11400000, guid: fb06e8d270ff77942874bb5e8bba344a, type: 2}
+    _modifier:
+      _type: 0
+      _value: 2
+    _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
+  _weaponModifiers: []
+  references:
+    version: 2
+    RefIds: []

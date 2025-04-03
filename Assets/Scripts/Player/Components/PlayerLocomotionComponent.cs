@@ -4,14 +4,8 @@ namespace WinterUniverse
 {
     public class PlayerLocomotionComponent : PlayerComponent
     {
-        public float Acceleration = 20f;
-        public float Deceleration = 40f;
-        public float MoveSpeed = 10f;
-        public float DashForce = 10f;
-        public float JumpForce = 5f;
-        public int JumpCount = 1;
-        public float FallUpGravityMultiplier = 1f;
-        public float FallDownGravityMultiplier = 2f;
+        public float FallUpGravityMultiplier = 2f;
+        public float FallDownGravityMultiplier = 4f;
         public float MaxFallSpeed = 40f;
         [Range(0.1f, 1f)] public float TimeToDash = 0.5f;
         [Range(0.1f, 1f)] public float TimeToJump = 0.25f;
@@ -103,11 +97,11 @@ namespace WinterUniverse
         {
             if (_player.Input.MoveInput != Vector2.zero)
             {
-                GroundVelocity = Vector3.MoveTowards(GroundVelocity, GetMoveDirection() * MoveSpeed, Acceleration * Time.deltaTime);
+                GroundVelocity = Vector3.MoveTowards(GroundVelocity, GetMoveDirection() * _player.Status.StatHolder.GetStat("Move Speed").CurrentValue, _player.Status.StatHolder.GetStat("Acceleration").CurrentValue * Time.deltaTime);
             }
             else
             {
-                GroundVelocity = Vector3.MoveTowards(GroundVelocity, Vector3.zero, Deceleration * Time.deltaTime);
+                GroundVelocity = Vector3.MoveTowards(GroundVelocity, Vector3.zero, _player.Status.StatHolder.GetStat("Deceleration").CurrentValue * Time.deltaTime);
             }
         }
 
@@ -121,7 +115,7 @@ namespace WinterUniverse
                 }
                 else
                 {
-                    DashVelocity = Vector3.MoveTowards(DashVelocity, Vector3.zero, DashForce / TimeToDash * Time.deltaTime);
+                    DashVelocity = Vector3.MoveTowards(DashVelocity, Vector3.zero, _player.Status.StatHolder.GetStat("Dash Force").CurrentValue / TimeToDash * Time.deltaTime);
                 }
             }
             else
@@ -140,7 +134,7 @@ namespace WinterUniverse
             _jumpCount++;
             _jumpTime = 0f;
             _groundedTime = 0f;
-            FallVelocity = Vector3.up * Mathf.Sqrt(JumpForce * -Gravity.y);
+            FallVelocity = Vector3.up * Mathf.Sqrt(_player.Status.StatHolder.GetStat("Jump Force").CurrentValue * -Gravity.y);
         }
 
         private bool StayOnGround()
@@ -161,17 +155,17 @@ namespace WinterUniverse
             }
             if (_player.Input.MoveInput != Vector2.zero)
             {
-                DashVelocity = GetMoveDirection() * DashForce;
+                DashVelocity = GetMoveDirection() * _player.Status.StatHolder.GetStat("Dash Force").CurrentValue;
             }
             else
             {
-                DashVelocity = transform.forward * DashForce;
+                DashVelocity = transform.forward * _player.Status.StatHolder.GetStat("Dash Force").CurrentValue;
             }
         }
 
         public void PerformJump()
         {
-            if (_jumpCount < JumpCount)
+            if (_jumpCount < _player.Status.StatHolder.GetStat("Jump Count").CurrentValue)
             {
                 ApplyJumpForce();
             }

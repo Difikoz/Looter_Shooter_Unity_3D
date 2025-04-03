@@ -11,6 +11,9 @@ TagManager:
   - Pawn
   - Water
   - UI
+  - Interactable
+  - Damageable
+  - Damage
   - 
   - 
   - 
@@ -33,9 +36,6 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - FPS
   - WorldSpaceUI
   m_SortingLayers:
   - name: Default
