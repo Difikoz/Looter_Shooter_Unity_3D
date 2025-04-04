@@ -40,12 +40,12 @@ MonoBehaviour:
   - _config: {fileID: 11400000, guid: 1086045547e9b2544a495c1126c5133b, type: 2}
     _modifier:
       _type: 0
-      _value: 450
+      _value: 900
     _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
   - _config: {fileID: 11400000, guid: 25bd9129ae1cb6547a3307354774585d, type: 2}
     _modifier:
       _type: 0
-      _value: 6
+      _value: 12
     _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
   - _config: {fileID: 11400000, guid: 3726f6a9c2fcb0648b4a70fa00af11af, type: 2}
     _modifier:

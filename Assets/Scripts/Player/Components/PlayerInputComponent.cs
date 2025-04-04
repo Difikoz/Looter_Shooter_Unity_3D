@@ -118,11 +118,11 @@ namespace WinterUniverse
                 _aimPerfomed = false;
                 if (HoldToAim)
                 {
-                    // start aim
+                    _player.Equipment.ActiveWeaponSlot.Weapon.PerformAim();
                 }
                 else
                 {
-                    // toggle aim
+                    _player.Equipment.ActiveWeaponSlot.Weapon.ToggleAim();
                 }
             }
             else if (_aimCanceled)
@@ -130,7 +130,7 @@ namespace WinterUniverse
                 _aimCanceled = false;
                 if (HoldToAim)
                 {
-                    // stop aim
+                    _player.Equipment.ActiveWeaponSlot.Weapon.CancelAim();
                 }
             }
             if (_reloadPerfomed)
@@ -150,6 +150,7 @@ namespace WinterUniverse
                 _nextWeaponPerfomed = false;
                 _player.Equipment.NextWeapon();
             }
+            DynamicCrosshairUI.StaticInstance.SetPosition(_player.Equipment.ActiveWeaponSlot.Weapon.GetHitPoint());
         }
     }
 }

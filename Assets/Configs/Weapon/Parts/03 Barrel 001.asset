@@ -50,7 +50,7 @@ MonoBehaviour:
   - _config: {fileID: 11400000, guid: 3726f6a9c2fcb0648b4a70fa00af11af, type: 2}
     _modifier:
       _type: 0
-      _value: 100
+      _value: 200
     _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
   _pawnModifiers:
   - _config: {fileID: 11400000, guid: ac93ebcd9e603474189938f00fc4b367, type: 2}

@@ -40,7 +40,7 @@ MonoBehaviour:
   - _config: {fileID: 11400000, guid: ad5a05a64e232d14ba78d3a0602bd732, type: 2}
     _modifier:
       _type: 0
-      _value: 8
+      _value: 100
     _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
   - _config: {fileID: 11400000, guid: 793818f7c8794784cb2d9d4c1b9cc59e, type: 2}
     _modifier:

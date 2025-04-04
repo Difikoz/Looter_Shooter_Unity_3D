@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 namespace WinterUniverse
@@ -37,14 +36,7 @@ namespace WinterUniverse
 
         public void AddRecoilForce(float force)
         {
-            if (Random.value > 0.5f)
-            {
-                _horizontalAngle += force / 2f;
-            }
-            else
-            {
-                _horizontalAngle -= force / 2f;
-            }
+            _horizontalAngle += Random.Range(-force / 2f, force / 2f);
             _verticalAngle = Mathf.Clamp(_verticalAngle - force, -VerticalAngleLimit, VerticalAngleLimit);
         }
     }

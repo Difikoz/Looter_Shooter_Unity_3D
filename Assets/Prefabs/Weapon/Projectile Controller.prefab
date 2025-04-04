@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 3963282710091593012}
+  _detectableMask:
+    serializedVersion: 2
+    m_Bits: 129
+  _testImpact: {fileID: 2876081424794137461, guid: 296e1e9c5664e0a40ad82d51266a5ff9, type: 3}
 --- !u!54 &3963282710091593012
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -71,9 +75,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &7034417993679045510
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +180,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

@@ -61,6 +61,10 @@ namespace WinterUniverse
             {
                 return;
             }
+            if (ActiveWeaponSlot.Weapon.IsPerfomingAction)
+            {
+                return;
+            }
             ActiveWeaponIndex = index;
             ActiveWeaponSlot.DisableComponent();
             ActiveWeaponSlot = WeaponSlots[ActiveWeaponIndex];

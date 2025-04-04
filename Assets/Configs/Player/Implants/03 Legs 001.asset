@@ -39,27 +39,27 @@ MonoBehaviour:
   - _config: {fileID: 11400000, guid: ac93ebcd9e603474189938f00fc4b367, type: 2}
     _modifier:
       _type: 0
-      _value: 20
+      _value: 200
     _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
   - _config: {fileID: 11400000, guid: 34f097c5211abcc4cbbf9016e417b8b1, type: 2}
     _modifier:
       _type: 0
-      _value: 40
+      _value: 400
     _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
   - _config: {fileID: 11400000, guid: 9852f53761a70e24082efc77eb25b94c, type: 2}
     _modifier:
       _type: 0
-      _value: 10
+      _value: 100
     _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
   - _config: {fileID: 11400000, guid: 74e9f123fa009aa489e5a53806954f51, type: 2}
     _modifier:
       _type: 0
-      _value: 50
+      _value: 500
     _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
   - _config: {fileID: 11400000, guid: a3fe2e9208b22e3429aeeefe8ec50a73, type: 2}
     _modifier:
       _type: 0
-      _value: 10
+      _value: 100
     _color: {fileID: 11400000, guid: 6ef186d48deade0478bac8bd2c9ef83b, type: 2}
   - _config: {fileID: 11400000, guid: e3593314cc6c35b4ba78b7f38368313b, type: 2}
     _modifier:

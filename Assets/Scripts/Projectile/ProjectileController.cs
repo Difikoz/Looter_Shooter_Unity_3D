@@ -8,6 +8,8 @@ namespace WinterUniverse
     public class ProjectileController : MonoBehaviour
     {
         [SerializeField] private Rigidbody _rb;
+        [SerializeField] private LayerMask _detectableMask;
+        [SerializeField] private GameObject _testImpact;
 
         private PlayerController _player;
         private WeaponController _weapon;
@@ -24,7 +26,7 @@ namespace WinterUniverse
             _damage = _weapon.StatHolder.GetStat("Damage").CurrentValue;
             _range = _weapon.StatHolder.GetStat("Fire Range").CurrentValue;
             _force = _weapon.StatHolder.GetStat("Projectile Force").CurrentValue;
-            StartCoroutine(DespawnTimer());
+            //StartCoroutine(DespawnTimer());
             _rb.linearVelocity = transform.forward * _force;
         }
 
@@ -40,8 +42,12 @@ namespace WinterUniverse
             LeanPool.Despawn(gameObject);
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision collision)
         {
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 1f, _detectableMask))
+            {
+                LeanPool.Despawn(LeanPool.Spawn(_testImpact, hit.point + hit.normal * 0.01f, Quaternion.LookRotation(hit.normal)), 10f);
+            }
             // try get component
             Despawn();
         }

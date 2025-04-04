@@ -97,11 +97,11 @@ namespace WinterUniverse
         {
             if (_player.Input.MoveInput != Vector2.zero)
             {
-                GroundVelocity = Vector3.MoveTowards(GroundVelocity, GetMoveDirection() * _player.Status.StatHolder.GetStat("Move Speed").CurrentValue, _player.Status.StatHolder.GetStat("Acceleration").CurrentValue * Time.deltaTime);
+                GroundVelocity = Vector3.MoveTowards(GroundVelocity, GetMoveDirection() * _player.Status.StatHolder.GetStat("Move Speed").CurrentValue / 10f, _player.Status.StatHolder.GetStat("Acceleration").CurrentValue / 10f * Time.deltaTime);
             }
             else
             {
-                GroundVelocity = Vector3.MoveTowards(GroundVelocity, Vector3.zero, _player.Status.StatHolder.GetStat("Deceleration").CurrentValue * Time.deltaTime);
+                GroundVelocity = Vector3.MoveTowards(GroundVelocity, Vector3.zero, _player.Status.StatHolder.GetStat("Deceleration").CurrentValue / 10f * Time.deltaTime);
             }
         }
 
@@ -115,7 +115,7 @@ namespace WinterUniverse
                 }
                 else
                 {
-                    DashVelocity = Vector3.MoveTowards(DashVelocity, Vector3.zero, _player.Status.StatHolder.GetStat("Dash Force").CurrentValue / TimeToDash * Time.deltaTime);
+                    DashVelocity = Vector3.MoveTowards(DashVelocity, Vector3.zero, _player.Status.StatHolder.GetStat("Dash Force").CurrentValue / 10f / TimeToDash * Time.deltaTime);
                 }
             }
             else
@@ -134,7 +134,7 @@ namespace WinterUniverse
             _jumpCount++;
             _jumpTime = 0f;
             _groundedTime = 0f;
-            FallVelocity = Vector3.up * Mathf.Sqrt(_player.Status.StatHolder.GetStat("Jump Force").CurrentValue * -Gravity.y);
+            FallVelocity = Vector3.up * Mathf.Sqrt(_player.Status.StatHolder.GetStat("Jump Force").CurrentValue / 10f * -Gravity.y);
         }
 
         private bool StayOnGround()
@@ -155,11 +155,11 @@ namespace WinterUniverse
             }
             if (_player.Input.MoveInput != Vector2.zero)
             {
-                DashVelocity = GetMoveDirection() * _player.Status.StatHolder.GetStat("Dash Force").CurrentValue;
+                DashVelocity = GetMoveDirection() * _player.Status.StatHolder.GetStat("Dash Force").CurrentValue / 10f;
             }
             else
             {
-                DashVelocity = transform.forward * _player.Status.StatHolder.GetStat("Dash Force").CurrentValue;
+                DashVelocity = transform.forward * _player.Status.StatHolder.GetStat("Dash Force").CurrentValue / 10f;
             }
         }
 
